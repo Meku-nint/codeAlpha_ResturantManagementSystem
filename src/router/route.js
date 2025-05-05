@@ -22,7 +22,7 @@ import {
   deleteOrder,
   orderReport
   
-} from '../controllers/controllerFileName.js';
+} from '../controller/controller.js';
 const router = express.Router();
 // Food Routes
 router.post('/food/add', addFoodToMenu);

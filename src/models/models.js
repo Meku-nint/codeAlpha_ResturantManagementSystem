@@ -1,5 +1,5 @@
-import mongoose, { Schema } from "mongoose";
-const foodSchema=new Schema.mongoose({
+import mongoose from "mongoose";
+const foodSchema=new mongoose.Schema({
     foodName:{
         type:String,
         required:true
@@ -28,7 +28,7 @@ const foodSchema=new Schema.mongoose({
         
     }
 })
-const drinkSchema=new Schema.mongoose({
+const drinkSchema=new mongoose.Schema({
     drinkName:{
         type:String,
         required:true
@@ -42,7 +42,7 @@ const drinkSchema=new Schema.mongoose({
         required:true
     },
     alcoholStatus:{      // for which time i mean it is for breakfast , lunch or dinner for what.
-        type:String,
+        type:Boolean,
         required:true
     },
     drinkId:{
@@ -56,13 +56,13 @@ const drinkSchema=new Schema.mongoose({
         
     }
 })
-const inventoryTrackingSchema=new Schema.mongoose({ // this help us to notice if the presence of spicy to prepare menu.
+const inventoryTrackingSchema=new mongoose.Schema({ // this help us to notice if the presence of spicy to prepare menu.
     description:{
         type:String,
         required:true
     }    
 })
-const tableReservationSchema=new Schema.mongoose({
+const tableReservationSchema=new mongoose.Schema({
        reserverName:{
         type:String,
         required:true
@@ -84,7 +84,7 @@ const tableReservationSchema=new Schema.mongoose({
             required:true
         }
 })
-const tableSchema=new Schema.mongoose({
+const tableSchema=new mongoose.Schema({
     tableId:{
         type:String,
         required:true,
@@ -94,7 +94,7 @@ const tableSchema=new Schema.mongoose({
         default:"free"
     }
 })
-const orderSchema=new Schema.mongoose({
+const orderSchema=new mongoose.Schema({
     orderId:{
         type:String,
     },

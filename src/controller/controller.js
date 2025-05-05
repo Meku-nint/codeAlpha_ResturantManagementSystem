@@ -1,4 +1,4 @@
-import models from '../models/models'
+import models from '../models/models.js'
 const {Table,Food,Drink,Order,Reservation,Inventory}=models;
 export const addFoodToMenu=async(req,res)=>{
     try {
@@ -280,7 +280,7 @@ export const addDrinkToMenu=async(req,res)=>{
         if(existing){
         throw new Error("The drink has already existed");
         }
-        const uploadFood=new Food({
+        const uploadDrink=new Drink({
             drinkName,
             description,
             price,
@@ -288,11 +288,11 @@ export const addDrinkToMenu=async(req,res)=>{
             drinkId,
             availableStatus
         })
-        await uploadFood.save();
+        await uploadDrink.save();
         res.status(201).json({
             success:true,
-            message:"food uploaded successfully",
-            uploadFood}
+            message:"drink uploaded successfully",
+            uploadDrink}
         );
     } catch (error) {
         res.status(404).json({
